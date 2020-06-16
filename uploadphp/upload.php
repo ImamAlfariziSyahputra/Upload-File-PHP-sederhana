@@ -15,7 +15,8 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload') {
         $dest_path = $uploadFileDir . $newFileName;
 
         if (move_uploaded_file($fileTmpPath, $dest_path)) {
-            $message = 'File Succesfully Upload.';            
+            $message = 'File Succesfully Upload.';
+            echo "Menuju File : <a href='".$uploadFileDir.$newFileName."'>".$newFileName."</a>";
         } else {
             $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
         }
